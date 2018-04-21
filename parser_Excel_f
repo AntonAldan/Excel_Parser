@@ -3,7 +3,7 @@ import xlrd
 
 
 #создаем переменную и открываем книгу указав путь к файлу 
-excel_data_file=xlrd.open_workbook('/home/zyarx/Parser/Pass.xlsx')
+excel_data_file=xlrd.open_workbook('/home/user/Parser/Pass.xlsx')
 #берем файл и обращаемся к нулевой странице (она же первая)
 sheet=excel_data_file.sheet_by_index(0)
 
