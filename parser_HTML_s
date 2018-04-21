@@ -1,0 +1,31 @@
+import requests , bs4
+
+s=requests.get('https://www.mirea.ru/')
+
+b=bs4.BeautifulSoup(s.text, "html.parser")
+data=b.select('.date_text')
+data_real=data[0].getText()
+
+print("Сейчаc:"+data_real)
+
+data_real=str(data_real)
+
+l = len(data_real)
+integ = []
+i = 0
+while i < l:
+    data_real_int = ''
+    a = data_real[i]
+    while '0' <= a <= '9':
+        data_real_int += a
+        i += 1
+        if i < l:
+            a = data_real[i]
+        else:
+            break
+    i += 1
+    if data_real_int != '':
+        integ.append(int(data_real_int))
+
+print('\n')
+print(integ)
