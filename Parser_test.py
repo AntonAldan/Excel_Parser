@@ -1,6 +1,8 @@
 from Def_Parser import download,parser_HTML,input_vallues,collumn_and_line
 import xlrd
 
+download()
+
 excel_data_file=xlrd.open_workbook('./schedule.xlsx')
 worksheet = excel_data_file.sheet_by_index(0)
 
@@ -29,5 +31,5 @@ for size_week in range(size_week,size_week+12,2):
     name_cells = worksheet.cell(size_week, size_group)
     schedule.append(str(name_cells).replace("empty:", "").replace("text:", "").replace(":", " ").replace("'", ""))
 
-for i, value_list in enumerate(schedule, 1): # Аттрибут 1 - начало сортировки
+for i, value_list in enumerate(schedule, 1):
      print(str(i)+")", value_list)
